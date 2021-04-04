@@ -36,6 +36,8 @@ body {
     padding: 0 1em;
     transform: translateY(-100%);
     transition: transform 750ms ease;
+    white-space: nowrap;
+    overflow-x: auto;
     &.active {
         transform: none;
     }
@@ -49,8 +51,42 @@ body {
         border: none;
         font-size: 1.2em;
         padding: .5em 1em;
-        margin: 0 .25em;
+        margin: .25em;
         cursor: pointer;
+    }
+}
+
+.modal {
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+    cursor: zoom-out;
+    &.active {
+        display: flex;
+    }
+    > .dimmer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.75;
+    }
+    > img {
+        position: absolute;
+        height: 80%;
+        max-width: 95vw;
+        margin: auto;
+        top: 10%;
+        cursor: inherit;
+        object-fit: contain;
+        user-select: none;
     }
 }
 
@@ -121,7 +157,7 @@ h2.bio, h2.projects {
     @media screen and (max-width: $breakpoint-large) {
         display: block;
     }
-    > div, > ul, > a {
+    > div, > ul, > span {
         flex-basis: 49%;
         flex-shrink: 0;
         padding: .25em;
@@ -192,6 +228,7 @@ div.card {
             object-fit: cover;
             width: auto;
             min-width: 100%;
+            cursor: auto;
             @include height-hack;
         }
         .title {
@@ -213,27 +250,6 @@ div.card {
     }
 }
 
-/*.turbo-center-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    animation: fade 2.5s;
-}
-
-.turbo-center-header.high {
-    align-items: flex-start;
-    height: unset;
-    min-height: 100vh;
-}
-
-.turbo-center-header h2,h3,h4,h5,p {
-    margin: 0.25em;
-    text-align: center;
-}
-
-*/
-
 a {
     color: deepskyblue;
     &:visited {
@@ -246,23 +262,10 @@ a {
     text-decoration: none;
 }
 
+img {
+    cursor: zoom-in;
+}
+
 p.justified {
     text-align: justify;
 }
-
-/*.karaoke-mugen {
-    display: block;
-    position: relative;
-}
-
-.karaoke-mugen::before {
-    background-image: url(./banniere-mugen2021.png);
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.karaoke-mugen * {
-    position: relative;
-}*/

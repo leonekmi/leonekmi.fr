@@ -16,6 +16,10 @@
         <button data-link="creations">Créations</button>
         <button data-link="passions">Passions</button>
     </div>
+    <div class="modal" id="modal">
+        <div class="dimmer"></div>
+        <img>
+    </div>
     <div class="welcome-header" id="head">
         <div>
             <h1>leonekmi</h1>
@@ -79,10 +83,9 @@
             <h3>Interface publique</h3>
             <p class="justified"><a href="https://mugen.karaokes.moe/" target="_blank"><strong>L'application Karaoke Mugen</strong></a> est pensée pour être utilisée dans des contextes évènementiels. Nous avons ainsi une interface publique pour permettre aux invités, avec leur smartphone, de suggérer des chansons et pour permettre à l'organisateur de récupérer les souhaits des utilisateurs. Dans le cycle de développement de la 5ème version majeure de l'application, l'idée de recréer une nouvelle interface publique, l'ancienne étant héritée des premières versions de l'application, avait commencée à être traitée. J'ai conçu une <a href="https://www.figma.com/file/445IJozxlXm8FgNnC2cqvE/New-Public-interface?node-id=0%3A1" target="_blank">maquette avec Figma</a> avec le soutien des autres développeurs. Le travail avait débuté en septembre 2020 pour des premiers résultats en novembre 2020, que nous avions <a href="https://mugen.karaokes.moe/fr/2020/11/17/KM5Preview.html" target="_blank">publiés sur le blog de l'application</a>. Avec les autres membres de l'équipe, nous avons donc implémenté cette interface avec le framework qui était déjà utilisé, React. La version est encore en travail mais est d'ores-et-déjà disponible dans une <a href="https://mugen.karaokes.moe/download.html#versions-exp%C3%A9rimentales" target="_blank">mouture expérimentale</a> sur le site Internet de l'application.</p>
             <img src="img/screen-mugen.png" alt="Capture d'écran de la nouvelle interface">
-            <!--<img src="screen-mugen2.png" alt="Capture d'écran de la nouvelle interface">-->
             <h3><a href="https://kara.moe/base" target="_blank">KMExplorer</a> : Explorer la base</h3>
             <p class="justified">Au-delà de l'application, il est possible de naviguer dans la base à travers le <a href="https://kara.moe/base">site Internet de la base</a>. L'interface a été entièrement refaite durant l'été 2020 pour remplacer l'ancienne qui manquait de fonctionnalités. J'ai créé l'architecture de l'application qui est une <a href="https://lab.shelter.moe/karaokemugen/karaokemugen-server/-/tree/master/kmexplorer" target="_blank">application Nuxt.js</a> universelle, en utilisant donc le framework Vue.js. En collaboration avec d'autres développeurs, j'ai également créé l'interface avec <a href="https://bulma.io/" target="_blank">Bulma</a>, elle est pensée pour afficher un maximum de détails tout en affichant un grand nombre de chansons.</p>
-            <img src="img/screen-mugen3.png" alt="Explorateur de base">
+            <img src="img/screen-mugen2.png" alt="Explorateur de base">
             <p><em>Crédit de l'image d'illustration : &copy; Sedeto 2021</em></p>
         </div>
         <div class="card">
@@ -118,10 +121,10 @@
             <p class="justified"><a href="https://mangactu.fr/"><strong>MangActu</strong></a> est un magazine lycéen débuté en 2019 au sein du Club Manga du lycée Louis Armand à Mulhouse. À la base une double page résumant les actualités, le MangActu a su se développer en un magazine mensuel de 20 pages distribués dans les librairies mulhousiennes, dont l'un des numéros est lauréat du <a href="https://www.ac-strasbourg.fr/fileadmin/pedagogie/clemi/Operations_concours/mediatiks/Palmares_mediatiks_2020.pdf" target="_blank"><strong>prix académique Médiatiks</strong> Strasbourg</a>. <em>Malheuresement, des suites de la pandémie et suite à une charge de travail qui s'est avérée trop importante, spécialement pour les terminales, la publication en a été suspendue.</em></p>
             <p class="justified">J'ai intégré l'équipe à la rentrée 2019 pour débuter en tant que rédacteur. Rapidement, j'ai su m'expérimenter avec la suite Adobe (InDesign, Photoshop) pour réaliser des maquettes et mettre en page une partie du magazine tous les mois. Également pour les besoins du magazine, j'ai su créé, là encore avec Laravel et Fomantic UI, le <a href="https://mangactu.fr/" target="_blank">site Internet</a> qui distribue le MangActu encore à ce jour.</p>
             <div class="grid">
-                <a href="img/mangactu1.png"><img src="img/mangactu1.png" alt="Exemple de mise en page réalisée : Coin Nippon et Figurines"></a>
-                <a href="img/mangactu2.png"><img src="img/mangactu2.png" alt="Exemple de mise en page réalisée : Mangas"></a>
-                <a href="img/mangactu3.png"><img src="img/mangactu3.png" alt="Exemple de mise en page réalisée : Interview Caly"></a>
-                <a href="img/mangactu4.png"><img src="img/mangactu4.png" alt="Exemple de mise en page réalisée : Animés"></a>
+                <span><img src="img/mangactu1.png" alt="Exemple de mise en page réalisée : Coin Nippon et Figurines"></span>
+                <span><img src="img/mangactu2.png" alt="Exemple de mise en page réalisée : Mangas"></span>
+                <span><img src="img/mangactu3.png" alt="Exemple de mise en page réalisée : Interview Caly"></span>
+                <span><img src="img/mangactu4.png" alt="Exemple de mise en page réalisée : Animés"></span>
             </div>
         </div>
     </div>
@@ -137,8 +140,8 @@
                     </p>
                 </div>
             </div>
-            <p class="justified">2014&nbsp;: Netflix se lance en France, je n'avais alors que 11 ans et je venais à peine de commencer mes premières années de collège. Muni de l'abonnement de mon père je me suis donc lancé sur la plateforme pour y trouver mon bonheur. À ce moment la plateforme n'avait qu'une liste restreinte de contenu disponible en France, cela ne m'a pas empêché de tomber sur <em>Death Note</em>, un thriller animé, adapté du manga de Tsugumi Ōba et Takeshi Obata. C'est donc ainsi le début d'une <a href="https://anilist.co/user/leonekmi/animelist" target="_blank">longue traversée</a> dans ce qu'a pu produire le Japon depuis plus de 20 ans.</p>
-            <p><em>Crédit de l'image d'illustration&nbsp;: &copy; Netflix Worldwide Entertainment, TRIGGER 2020-2021</em></p>
+            <p class="justified">2014&nbsp;: Netflix se lance en France, je n'avais alors que 11 ans et je venais à peine de commencer ma première année de collège. Muni de l'abonnement de mon père je me suis donc lancé sur la plateforme pour y trouver mon bonheur. À ce moment la plateforme n'avait qu'une liste restreinte de contenu disponible en France, cela ne m'a pas empêché de tomber sur <em>Death Note</em>, un thriller animé, adapté du manga de Tsugumi Ōba et Takeshi Obata. C'est donc ainsi le début d'une <a href="https://anilist.co/user/leonekmi/animelist" target="_blank">longue traversée</a> dans ce qu'a pu produire le Japon depuis plus de 20 ans.</p>
+            <p><em>Crédit de l'image d'illustration&nbsp;: Brand New Animal &copy; Netflix Worldwide Entertainment, TRIGGER 2020-2021</em></p>
         </div>
     </div>
 </body>

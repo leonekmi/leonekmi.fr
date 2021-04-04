@@ -18,6 +18,7 @@ function scrollListener() {
         document.querySelectorAll<HTMLButtonElement>('#menu button').forEach(btn => {
             if (btn.dataset.link === activeSection) {
                 btn.className = 'active';
+                EBID('menu').scrollBy({ left: btn.getBoundingClientRect().left - 10, behavior: 'smooth' });
             } else {
                 btn.className = '';
             }
@@ -27,13 +28,23 @@ function scrollListener() {
         document.querySelectorAll<HTMLButtonElement>('#menu button').forEach(btn => {
             btn.className = '';
         });
+        EBID('menu').scrollBy({ left: 0, behavior: 'smooth' });
     }
 }
 
-function clickListener(e: MouseEvent) {
+function buttonClickListener(e: MouseEvent) {
+    e.preventDefault();
     const target = (e.target as HTMLButtonElement).dataset.link;
     console.log(EBID(target));
-    window.scrollBy({ top: EBID(target).getBoundingClientRect().top+10, behavior: 'smooth' });
+    window.scrollBy({ top: EBID(target).getBoundingClientRect().top + 10, behavior: 'smooth' });
+}
+
+function imageClickListener(e: MouseEvent) {
+    const target = (e.target as HTMLImageElement);
+    document.querySelector<HTMLImageElement>('#modal img').src = target.src;
+    document.querySelector<HTMLImageElement>('#modal img').srcset = target.srcset;
+    document.querySelector<HTMLImageElement>('#modal img').alt = target.alt;
+    EBID('modal').className = 'modal active';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,7 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.className = 'skip-animation';
     }
     document.querySelectorAll<HTMLButtonElement>('#menu button').forEach(btn => {
-        btn.addEventListener('click', clickListener);
+        btn.addEventListener('click', buttonClickListener);
+    });
+    document.querySelectorAll<HTMLImageElement>('*:not(.header):not(.modal) > img').forEach(img => {
+        img.addEventListener('click', imageClickListener, { passive: true });
+    });
+    EBID('modal').addEventListener('click', () => {
+        EBID('modal').className = 'modal';
     });
     scrollListener();
 }, { passive: true });

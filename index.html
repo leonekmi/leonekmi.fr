@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leonekmi</title>
+    <script type="module" src="/main.ts"></script>
+    <!-- Vous êtes le prof d'info d'une des formations ?
+        Vous pouvez venir me parler si ça vous chante : prenez.moi@leonekmi.fr
+        Le code soruce du site est disponible sur GitHub : https://github.com/leonekmi -->
+</head>
+<body>
+    <div class="menu" id="menu">
+        <button data-link="head">Retour en haut</button>
+        <button data-link="competences">Compétences</button>
+        <button data-link="creations">Créations</button>
+        <button data-link="passions">Passions</button>
+    </div>
+    <div class="welcome-header" id="head">
+        <div>
+            <h1>leonekmi</h1>
+            <h2>Leon Lozahic</h2>
+            <p>17 ans, Développeur/concepteur web. Nage dans la culture de la japanimation.</p>
+        </div>
+    </div>
+    <div class="bio" id="bio">
+        <p>Prépare un Baccalauréat général spécialité Mathématiques / Numérique et Sciences Informatiques (spécialité SES en Première)</p>
+        <p>A décidé d'opter pour la classe Web et UI/UX dans le vaste monde de l'informatique.</p>
+        <p>Utilisateur aguerri d'Arch Linux sur bureau.</p>
+        <p><strong>Langues&nbsp;:</strong> 🇬🇧 Anglais (B2), 🇵🇱 Polonais (A2+), 🇩🇪 Allemand (A1-A2)</p>
+    </div>
+    <h2 class="projects" id="competences">Compétences</h2>
+    <div class="projects grid align-center">
+        <div class="card large">
+            <div class="grid">
+                <ul>
+                    <li><strong>Web</strong>&nbsp;<em>(HTML5, CSS3, JavaScript, TypeScript)</em></li>
+                    <li class="spacing"><strong>Technologies frontend&nbsp;:</strong>&nbsp;Vue.js (2.x, 3.x, Nuxt), React (Next.js)</li>
+                    <li class="spacing"><strong>UI/UX Design&nbsp;:</strong>&nbsp;Figma, Canva, Fomantic UI, Bootstrap, Bulma</li>
+                    <li class="spacing"><strong>Technologies backend&nbsp;:</strong>&nbsp;Node.js (Express, Electron), Django, PHP 7 (WordPress, Laravel)</li>
+                    <li class="spacing"><strong>Serveurs web&nbsp;:</strong>&nbsp;nginx, Apache2</li>
+                </ul>
+                <ul>
+                    <li><strong>Développement</strong></li>
+                    <li class="spacing"><strong>Algorithmique&nbsp;:</strong>&nbsp;Python 3, Go</li>
+                    <li class="spacing"><strong>Base de données&nbsp;:</strong>&nbsp;PostgreSQL, MySQL, SQL, ArangoDB</li>
+                    <li class="spacing"><strong>Gestion de versions&nbsp;:</strong>&nbsp;Git</li>
+                    <li class="spacing"><strong>Forge logicielles&nbsp;:</strong>&nbsp;GitHub, GitLab, Gitea, Gogs</li>
+                </ul>
+                <ul>
+                    <li><strong>Administration système</strong></li>
+                    <li class="spacing"><strong>Surveillance&nbsp;:</strong>&nbsp;Zabbix, SNMP</li>
+                    <li class="spacing"><strong>Systèmes d'exploitation&nbsp;:</strong>&nbsp;Ubuntu/Debian, Arch Linux, Fedora</li>
+                </ul>
+                <ul>
+                    <li><strong>Création numérique et audiovisuelle</strong></li>
+                    <li class="spacing"><strong>Mise en page, maquettes&nbsp;:</strong>&nbsp;InDesign, Canva</li>
+                    <li class="spacing"><strong>Imagerie&nbsp;:</strong>&nbsp;GIMP, Photoshop</li>
+                    <li class="spacing"><strong>Montage vidéo&nbsp;:</strong>&nbsp;Kdenlive, Sony Vegas Pro</li>
+                    <li class="spacing"><strong>Son&nbsp;:</strong>&nbsp;Audacity</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h2 class="projects" id="creations">Créations</h2>
+    <div class="projects grid">
+        <div class="card">
+            <div class="header">
+                <img src="banniere-mugen2021.png" alt="">
+                <div class="title">
+                    <a href="https://karaokes.moe/" target="_blank">Karaoke Mugen</a>
+                    <p class="sub-header">
+                        Le karaoké infini
+                    </p>
+                </div>
+            </div>
+            <p class="justified"><a href="https://karaokes.moe/" target="_blank"><strong>Karaoke Mugen</strong></a> est une suite d'outils tournant autour du karaoké&nbsp;:&nbsp;il y a une <a href="https://kara.moe/base" target="_blank">base de données collaborative</a> et des <a href="https://karaokes.moe/" target="_blank">applications</a> pour pouvoir organiser ou jouer les dits karaokés. C'est une application qui existe depuis 2017 et qui a été utilisée avec succès à de nombreuses conventions à thème pop culture (Jonetsu, Japan Expo, etc.).</p>
+            <p class="justified">J'ai découvert ce projet en mars 2020 et vite rejoint l'équipe de développement afin de pouvoir apporter mon aide. Le projet vit de ses nombreuses collaborations et d'une base très riche pour de nombreux goûts.</p>
+            <h3>Interface publique</h3>
+            <p class="justified"><a href="https://mugen.karaokes.moe/" target="_blank"><strong>L'application Karaoke Mugen</strong></a> est pensée pour être utilisé dans des contextes évènementiels. Nous avons ainsi une interface publique pour permettre aux invités, avec leur smartphone, de suggérer des chansons et pour permettre à l'organisateur de récupérer les souhaits des utilisateurs. Dans le cycle de développement de la 5ème version majeure de l'application, l'idée de recréer une nouvelle interface publique, l'ancienne étant héritée des premières versions de l'application, avait commencée à être traitée. J'ai commencé à réaliser une <a href="https://www.figma.com/file/445IJozxlXm8FgNnC2cqvE/New-Public-interface?node-id=0%3A1" target="_blank">maquette réalisée sur Figma</a> en collaboration avec les autres. Le travail avait débuté en septembre 2020 pour des premiers résultats en novembre 2020, que nous avions <a href="https://mugen.karaokes.moe/fr/2020/11/17/KM5Preview.html" target="_blank">publiés sur le blog de l'application</a>. Toujours en collaboration, j'ai implémenté cette interface avec le framework qui était déjà utilisé, React. La version est encore en travail mais est d'ores-et-déjà disponible dans une <a href="https://mugen.karaokes.moe/download.html#versions-exp%C3%A9rimentales" target="_blank">mouture expérimentale</a> sur le site Internet de l'application.</p>
+            <img src="screen-mugen.png" alt="Capture d'écran de la nouvelle interface">
+            <!--<img src="screen-mugen2.png" alt="Capture d'écran de la nouvelle interface">-->
+            <h3><a href="https://kara.moe/base" target="_blank">KMExplorer</a> : Explorer la base</h3>
+            <p class="justified">Au-delà de l'application, il est possible de naviguer dans la base à travers le <a href="https://kara.moe/base">site Internet de la base</a>. L'interface a été entièrement refaite durant l'été 2020 pour remplacer l'ancienne qui manquait de fonctionnalités. J'ai créé l'architecture de l'application qui est une <a href="https://lab.shelter.moe/karaokemugen/karaokemugen-server/-/tree/master/kmexplorer" target="_blank">application Nuxt.js</a> universelle, en utilisant donc le framework Vue.js. En collaboration avec d'autres développeurs, j'ai également créé l'interface avec <a href="https;//bulma.io/" target="_blank">Bulma</a>, elle est pensée pour afficher un maximum de détails tout en affichant un grand nombre de chansons.</p>
+            <img src="screen-mugen3.png" alt="Explorateur de base">
+            <p><em>Crédit de l'image d'illustration : &copy; Sedeto 2021</em></p>
+        </div>
+        <div class="card">
+            <div class="header">
+                <img src="anjara-banner.jpg" alt="">
+                <div class="title">
+                    <a href="https://anjara.eu/" target="_blank">Anjara</a>
+                    <p class="sub-header">
+                        Promouvoir et créer des logiciels libres
+                    </p>
+                </div>
+            </div>
+            <p class="justified"><a href="https://anjara.eu/" target="_blank"><strong>Anjara</strong></a> est une association loi 1901 établie en Île-de-France ayant pour but de promouvoir le logiciel libre à travers l'hébergement et le développement de ceux-ci. Créée en janvier 2019, nous sommes composés de 7 personnes poursuivant tous le même but&nbsp;: apprendre en servant à la fois une cause.</p>
+            <p class="justified">J'ai été dès le début de l'aventure et je suis trésorier de l'association depuis sa création. Nous avons des plans pour acheter et mettre en centre de données notre propre infrastructure serveur. En attendant, nous louons des serveurs chez des hébergeurs (Hetzner, Vultr, OVH) pour héberger nos projets.</p>
+            <h3><a href="https://files.anjara.eu/" target="_blank">AnjaraFiles</a>&nbsp;: Partage de fichiers</h3>
+            <p class="justified">J'ai créé de toutes pièces grâce à Laravel et Fomantic UI une solution de partage de fichiers nommée Raki, elle a pour but de rendre possible le partage de fichiers d'une façon simple, sans nécessiter de compte ni d'inscription. Le tout en permettant de garder ses fichiers pendant 1 an maximum, de les chiffrer avec un mot de passe, de les supprimer automatiquement ou manuellement tout ou partie des fichiers. Le code source est <a href="https://github.com/anjaraeu/Raki" target="_blank">disponible sur GitHub</a>.</p>
+            <img src="anjarafiles.png" alt="Capture d'écran de Raki">
+            <h3><a href="https://l.anjara.eu/" target="_blank">AnjaraLink</a>&nbsp;: Raccourcisseur de lien</h3>
+            <p class="justified">Anjara propose un service de raccourcissement de liens simple à utiliser, là encore ne nécessitant aucun compte ni inscription. Toujours réalisé avec Laravel, j'ai décidé pour le coup de créer ma propre feuille de style CSS. L'interface qui en résulte est sobre et épurée.</p>
+            <img src="anjaralink.png" alt="Capture d'écran de Link">
+            <p><em>Crédit de l'image d'illustration : &copy; Volnix 2019-2021</em></p>
+        </div>
+        <div class="card">
+            <div class="header">
+                <img src="mangactu.png" alt="">
+                <div class="title">
+                    <a href="https://mangactu.fr/" target="_blank">MangActu</a>
+                    <p class="sub-header">
+                        Magazine lycéen Pop Culture
+                    </p>
+                </div>
+            </div>
+            <p class="justified"><a href="https://mangactu.fr/"><strong>MangActu</strong></a> est un magazine lycéen débuté en 2019 au sein du Club Manga du lycée Louis Armand à Mulhouse. À la base une double page résumant les actualités, le MangActu a su se développer en un magazine mensuel de 20 pages distribués dans les librairies mulhousiennes, dont l'un des numéros est lauréat du <a href="https://www.ac-strasbourg.fr/fileadmin/pedagogie/clemi/Operations_concours/mediatiks/Palmares_mediatiks_2020.pdf" target="_blank"><strong>prix académique Médiatiks</strong> Strasbourg</a>. <em>Malheuresement, des suites de la pandémie et suite à une charge de travail qui s'est avérée trop importante, spécialement pour les terminales, la publication en a été suspendue.</em></p>
+            <p class="justified">J'ai intégré l'équipe à la rentrée 2019 pour débuter en tant que rédacteur. Rapidement, j'ai su m'expérimenter avec la suite Adobe (InDesign, Photoshop) pour réaliser des maquettes et mettre en page une partie du magazine tous les mois. Également pour les besoins du magazine, j'ai su créé, là encore avec Laravel et Fomantic UI, le <a href="https://mangactu.fr/" target="_blank">site Internet</a> qui distribue le MangActu encore à ce jour.</p>
+            <div class="grid">
+                <a href="mangactu1.png"><img src="mangactu1.png" alt="Exemple de mise en page réalisée : Coin Nippon et Figurines"></a>
+                <a href="mangactu2.png"><img src="mangactu2.png" alt="Exemple de mise en page réalisée : Mangas"></a>
+                <a href="mangactu3.png"><img src="mangactu3.png" alt="Exemple de mise en page réalisée : Interview Caly"></a>
+                <a href="mangactu4.png"><img src="mangactu4.png" alt="Exemple de mise en page réalisée : Animés"></a>
+            </div>
+        </div>
+    </div>
+    <h2 class="projects" id="passions">Passions</h2>
+    <div class="projects grid">
+        <div class="card">
+            <div class="header">
+                <img src="brandnewanimal.jpg" alt="">
+                <div class="title">
+                    <a href="https://anilist.co/user/leonekmi" target="_blank">Animation japonaise</a>
+                    <p class="sub-header">
+                        L'ultime échappatoire
+                    </p>
+                </div>
+            </div>
+            <p class="justified">2014&nbsp;: Netflix se lance en France, je n'avais alors que 11 ans et je venais à peine de commencer mes premières années de collège. Muni de l'abonnement de mon père je me suis donc lancé sur la plateforme pour y trouver mon bonheur. À ce moment la plateforme n'avait qu'une liste restreinte de contenu disponible en France, cela ne m'a pas empêché de tomber sur <em>Death Note</em>, un thriller animé, adapté du manga de Tsugumi Ōba et Takeshi Obata. C'est donc ainsi le début d'une <a href="https://anilist.co/user/leonekmi/animelist" target="_blank">longue traversée</a> dans ce qu'a pu produire le Japon depuis plus de 20 ans.</p>
+            <p><em>Crédit de l'image d'illustration&nbsp;: &copy; Netflix Worldwide Entertainment, TRIGGER 2020-2021</em></p>
+        </div>
+    </div>
+</body>
+</html>

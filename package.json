@@ -1,0 +1,17 @@
+{
+  "name": "nekmi-portfolio",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "@fontsource/lato": "^4.2.2",
+    "minireset.css": "^0.0.7",
+    "sass": "^1.32.8",
+    "vite": "^2.1.5"
+  }
+}

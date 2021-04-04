@@ -1,0 +1,268 @@
+@import "@fontsource/lato/latin.css";
+@import "minireset.css";
+
+$breakpoint-small: 680px;
+$breakpoint-large: 1200px;
+$breakpoint-larger: 1600px;
+$background: #282828;
+
+@mixin slide($duration, $offset) {
+    animation: $duration ease-in-out $offset slide-in forwards;
+    opacity: 0;
+}
+
+body {
+    background-color: $background;
+    color: whitesmoke;
+    font-family: Lato, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2em;
+    @media screen and (max-width: $breakpoint-small) {
+        padding: .75em;
+    }
+    &.skip-animation {
+        .welcome-header, .bio, .projects {
+            animation-delay: -200s;
+        }
+    }
+}
+
+.menu {
+    position: fixed;
+    background-color: black;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 1em;
+    transform: translateY(-100%);
+    transition: transform 750ms ease;
+    &.active {
+        transform: none;
+    }
+    > button {
+        background-color: dimgray;
+        color: whitesmoke;
+        transition: color 300ms linear;
+        &.active {
+            color: goldenrod;
+        }
+        border: none;
+        font-size: 1.2em;
+        padding: .5em 1em;
+        margin: 0 .25em;
+        cursor: pointer;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-header {
+    @media screen and (max-width: $breakpoint-small) {
+        text-align: center;
+    }
+    @include slide(600ms, 0s);
+    > div {
+        max-width: 35%;
+        @media screen and (max-width: $breakpoint-large) {
+            max-width: 50%;
+        }
+        @media screen and (max-width: $breakpoint-small) {
+            max-width: unset;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            font-style: italic;
+            margin-bottom: .25em;
+        }
+    }
+
+    margin-bottom: .5em;
+}
+
+.bio {
+    @include slide(500ms, 650ms);
+}
+
+.projects {
+    @include slide(600ms, 1050ms);
+}
+
+h2.bio, h2.projects {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    &.align-center {
+        justify-content: center;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        display: block;
+    }
+    > div, > ul, > a {
+        flex-basis: 49%;
+        flex-shrink: 0;
+        padding: .25em;
+        @media screen and (max-width: $breakpoint-large) {
+            flex-basis: 100%;
+        }
+    }
+    ul {
+        text-align: justify;
+        list-style: circle;
+        padding-left: 1.25em;
+        li.spacing {
+            margin-left: 1em;
+        }
+    }
+    .text {
+        > p {
+            width: 95%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
+
+@mixin height-hack {
+    height: 25rem;
+    @media screen and (max-width: $breakpoint-larger) {
+        height: 20rem;
+    }
+    @media screen and (max-width: $breakpoint-large) {
+        height: 15rem;
+    }
+    @media screen and (max-width: $breakpoint-small) {
+        height: 10rem;
+    }
+}
+
+div.card {
+    background-color: scale-color($background, $lightness: 15%);
+    padding: 1em;
+    border-radius: 20px;
+    border: 1px solid dimgray;
+    margin-top: 1em;
+    &.large {
+        flex-basis: 75%;
+        @media screen and (max-width: $breakpoint-large) {
+            flex-basis: 100%;
+        }
+    }
+    h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: .75em;
+        margin-bottom: .25em;
+    }
+    > img, a > img {
+        margin-top: .5em;
+        border: 2px solid whitesmoke;
+    }
+    .header {
+        position: relative;
+        transform: translate(-1em,-1em);
+        width: calc(100% + 2em);
+        @include height-hack;
+        img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            object-fit: cover;
+            width: auto;
+            min-width: 100%;
+            @include height-hack;
+        }
+        .title {
+            position: absolute;
+            bottom: 0;
+            padding: .5em;
+            width: 100%;
+            opacity: 0.8;
+            background-color: black;
+            font-size: 1.25em;
+            font-weight: bold;
+            text-shadow: black 2px 2px 4px;
+            .sub-header {
+                font-size: 0.75em;
+                font-style: italic;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+/*.turbo-center-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fade 2.5s;
+}
+
+.turbo-center-header.high {
+    align-items: flex-start;
+    height: unset;
+    min-height: 100vh;
+}
+
+.turbo-center-header h2,h3,h4,h5,p {
+    margin: 0.25em;
+    text-align: center;
+}
+
+*/
+
+a {
+    color: deepskyblue;
+    &:visited {
+        color: deepskyblue;
+    }
+    &:hover {
+        color: lightskyblue;
+    }
+    transition: color 200ms ease;
+    text-decoration: none;
+}
+
+p.justified {
+    text-align: justify;
+}
+
+/*.karaoke-mugen {
+    display: block;
+    position: relative;
+}
+
+.karaoke-mugen::before {
+    background-image: url(./banniere-mugen2021.png);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.karaoke-mugen * {
+    position: relative;
+}*/

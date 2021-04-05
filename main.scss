@@ -5,6 +5,7 @@ $breakpoint-small: 680px;
 $breakpoint-large: 1200px;
 $breakpoint-larger: 1600px;
 $background: #282828;
+$link-color: #00e1ff;
 
 @mixin slide($duration, $offset) {
     animation: $duration ease-in-out $offset slide-in forwards;
@@ -42,7 +43,7 @@ body {
         transform: none;
     }
     > button {
-        background-color: dimgray;
+        background-color: #2f2f2f;
         color: whitesmoke;
         transition: color 300ms linear;
         &.active {
@@ -251,12 +252,12 @@ div.card {
 }
 
 a {
-    color: deepskyblue;
+    color: $link-color;
     &:visited {
-        color: deepskyblue;
+        color: $link-color;
     }
     &:hover {
-        color: lightskyblue;
+        color: scale-color($link-color, $lightness: 50%);
     }
     transition: color 200ms ease;
     text-decoration: none;

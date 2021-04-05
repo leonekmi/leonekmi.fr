@@ -28,7 +28,7 @@ function scrollListener() {
         document.querySelectorAll<HTMLButtonElement>('#menu button').forEach(btn => {
             btn.className = '';
         });
-        EBID('menu').scrollBy({ left: 0, behavior: 'smooth' });
+        EBID('menu').scrollTo({ left: 0, behavior: 'smooth' });
     }
 }
 
@@ -36,7 +36,7 @@ function buttonClickListener(e: MouseEvent) {
     e.preventDefault();
     const target = (e.target as HTMLButtonElement).dataset.link;
     console.log(EBID(target));
-    window.scrollBy({ top: EBID(target).getBoundingClientRect().top + 10, behavior: 'smooth' });
+    window.scrollBy({ top: EBID(target).getBoundingClientRect().top - 20, behavior: 'smooth' });
 }
 
 function imageClickListener(e: MouseEvent) {

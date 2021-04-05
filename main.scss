@@ -135,15 +135,19 @@ body {
     @include slide(500ms, 650ms);
 }
 
-.projects {
-    @include slide(600ms, 1050ms);
+.skills {
+    @include slide(600ms, 1050ms)
 }
 
-h2.bio, h2.projects {
+.projects {
+    @include slide(600ms, 1150ms);
+}
+
+body > h2 {
     font-size: 1.5em;
     font-weight: bold;
     text-align: center;
-    margin: 1em 0;
+    margin: .5em 0;
 }
 
 .grid {

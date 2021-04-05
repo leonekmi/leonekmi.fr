@@ -21,7 +21,7 @@ body {
         padding: .75em;
     }
     &.skip-animation {
-        .welcome-header, .bio, .projects {
+        .welcome-header, .bio, .skills, .projects {
             animation-delay: -200s;
         }
     }

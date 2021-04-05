@@ -162,7 +162,7 @@ body > h2 {
     @media screen and (max-width: $breakpoint-large) {
         display: block;
     }
-    > article, > ul, > span {
+    > div, > ul, > span {
         flex-basis: 49%;
         flex-shrink: 0;
         padding: .25em;

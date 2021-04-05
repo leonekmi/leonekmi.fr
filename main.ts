@@ -2,6 +2,8 @@ import './main.scss';
 
 // Alias for document.getElementById
 const EBID: typeof document.getElementById = document.getElementById.bind(document);
+// WebP images are only supported on Safari > 13
+const isOldSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && parseInt(/Version\/([0-9]{2})/.exec(navigator.userAgent)[1]) <= 13;
 
 function scrollListener() {
     // Activate menu only after scroll
@@ -57,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll<HTMLImageElement>('*:not(.header):not(.modal) > img').forEach(img => {
         img.addEventListener('click', imageClickListener, { passive: true });
     });
+    // WebP images are only supported on Safari > 13
+    if (isOldSafari) {
+        document.querySelectorAll<HTMLImageElement>('img').forEach(img => {
+            img.removeAttribute('srcset');
+        });
+    }
     EBID('modal').addEventListener('click', () => {
         EBID('modal').className = 'modal';
     });

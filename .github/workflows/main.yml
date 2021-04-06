@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy to leonekmi.fr
 
 # Controls when the action will run. 
 on:
@@ -44,7 +44,20 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: website-dist
-      - name: Display structure of downloaded files
-        run: ls -R
-          
-      
+      - name: Deploy assets
+        uses: up9cloud/action-rsync@v1.3
+        env:
+          HOST: leonekmi.fr
+          KEY: ${{secrets.SSH_KEY}}
+          PORT: 2556
+          TARGET: /var/www/leonekmi.fr/assets
+          SOURCE: ./assets
+      - name: Deploy index.html
+        uses: up9cloud/action-rsync@v1.3
+        env:
+          HOST: leonekmi.fr
+          KEY: ${{secrets.SSH_KEY}}
+          PORT: 2556
+          TARGET: /var/www/leonekmi.fr/index.html
+          SOURCE: ./index.html
+          ARGS: -z

@@ -206,6 +206,7 @@ div.card {
     border-radius: 20px;
     border: 1px solid dimgray;
     margin-top: 1em;
+    align-self: stretch;
     &.large {
         flex-basis: 75%;
         @media screen and (max-width: $breakpoint-large) {

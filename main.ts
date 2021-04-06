@@ -7,12 +7,12 @@ const isOldSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &
 
 function scrollListener() {
     // Activate menu only after scroll
-    if (EBID('bio').getBoundingClientRect().bottom < 0) {
+    if (EBID('bio').getBoundingClientRect().bottom < 20) {
         EBID('menu').className = 'menu active';
         let activeSection: 'passions' | 'creations' | 'competences';
-        if (EBID('passions').getBoundingClientRect().top < 0) {
+        if (EBID('passions').getBoundingClientRect().top < 20) {
             activeSection = 'passions';
-        } else if (EBID('creations').getBoundingClientRect().top < 0) {
+        } else if (EBID('creations').getBoundingClientRect().top < 20) {
             activeSection = 'creations';
         } else {
             activeSection = 'competences';
@@ -38,7 +38,7 @@ function buttonClickListener(e: MouseEvent) {
     e.preventDefault();
     const target = (e.target as HTMLButtonElement).dataset.link;
     console.log(EBID(target));
-    window.scrollBy({ top: EBID(target).getBoundingClientRect().top - 20, behavior: 'smooth' });
+    window.scrollBy({ top: EBID(target).getBoundingClientRect().top - 15, behavior: 'smooth' });
 }
 
 function imageClickListener(e: MouseEvent) {

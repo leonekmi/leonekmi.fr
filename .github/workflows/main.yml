@@ -45,19 +45,19 @@ jobs:
         with:
           name: website-dist
       - name: Deploy assets
-        uses: up9cloud/action-rsync@v1.3
+        uses: Pendect/action-rsyncer@v1.1.0
         env:
-          HOST: leonekmi.fr
-          KEY: ${{secrets.SSH_KEY}}
-          PORT: 2556
-          TARGET: /var/www/leonekmi.fr/assets
-          SOURCE: ./assets
+          DEPLOY_KEY: ${{secrets.SSH_KEY}}
+        with:
+          ssh_options: '-p 2556'
+          src: 'assets/'
+          dest: 'root@leonekmi.fr:/var/www/leonekmi.fr/assets'
       - name: Deploy index.html
-        uses: up9cloud/action-rsync@v1.3
+        uses: Pendect/action-rsyncer@v1.1.0
         env:
-          HOST: leonekmi.fr
-          KEY: ${{secrets.SSH_KEY}}
-          PORT: 2556
-          TARGET: /var/www/leonekmi.fr/index.html
-          SOURCE: ./index.html
-          ARGS: -z
+          DEPLOY_KEY: ${{secrets.SSH_KEY}}
+        with:
+          flags: '-z'
+          ssh_options: '-p 2556'
+          src: 'index.html'
+          dest: 'root@leonekmi.fr:/var/www/leonekmi.fr/index.html'

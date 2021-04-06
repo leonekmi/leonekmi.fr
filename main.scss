@@ -268,7 +268,14 @@ a {
     text-decoration: none;
 }
 
-img {
+.icon {
+    height: 1em;
+    width: auto;
+    display: inline;
+    vertical-align: middle;
+}
+
+img:not(.icon) {
     cursor: zoom-in;
 }
 

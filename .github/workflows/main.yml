@@ -51,7 +51,7 @@ jobs:
         with:
           ssh_options: '-p 2556'
           src: 'assets/'
-          dest: 'root@leonekmi.fr:/var/www/leonekmi.fr/assets'
+          dest: 'leonekmifr-deploy@leonekmi.fr:/var/www/leonekmi.fr/assets'
       - name: Deploy index.html
         uses: Pendect/action-rsyncer@v1.1.0
         env:
@@ -60,4 +60,4 @@ jobs:
           flags: '-z'
           ssh_options: '-p 2556'
           src: 'index.html'
-          dest: 'root@leonekmi.fr:/var/www/leonekmi.fr/index.html'
+          dest: 'leonekmifr-deploy@leonekmi.fr:/var/www/leonekmi.fr/index.html'

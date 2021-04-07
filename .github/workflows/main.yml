@@ -49,6 +49,7 @@ jobs:
         env:
           DEPLOY_KEY: ${{secrets.SSH_KEY}}
         with:
+          flags: '-zvr --delete'
           ssh_options: '-p 2556'
           options: '-O'
           src: 'assets/'

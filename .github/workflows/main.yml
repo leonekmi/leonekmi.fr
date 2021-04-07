@@ -50,6 +50,7 @@ jobs:
           DEPLOY_KEY: ${{secrets.SSH_KEY}}
         with:
           ssh_options: '-p 2556'
+          options: '-O'
           src: 'assets/'
           dest: 'leonekmifr-deploy@leonekmi.fr:/var/www/leonekmi.fr/assets'
       - name: Deploy index.html
@@ -59,5 +60,6 @@ jobs:
         with:
           flags: '-z'
           ssh_options: '-p 2556'
+          options: '-O'
           src: 'index.html'
           dest: 'leonekmifr-deploy@leonekmi.fr:/var/www/leonekmi.fr/index.html'

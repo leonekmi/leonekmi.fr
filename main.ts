@@ -9,13 +9,13 @@ function scrollListener() {
     // Activate menu only after scroll
     if (EBID('bio').getBoundingClientRect().bottom < 20) {
         EBID('menu').className = 'menu active';
-        let activeSection: 'passions' | 'creations' | 'competences';
+        let activeSection: 'passions' | 'creations' | 'activites';
         if (EBID('passions').getBoundingClientRect().top < 20) {
             activeSection = 'passions';
         } else if (EBID('creations').getBoundingClientRect().top < 20) {
             activeSection = 'creations';
         } else {
-            activeSection = 'competences';
+            activeSection = 'activites';
         }
         document.querySelectorAll<HTMLButtonElement>('#menu button').forEach(btn => {
             if (btn.dataset.link === activeSection) {

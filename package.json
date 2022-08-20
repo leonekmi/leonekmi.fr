@@ -9,9 +9,9 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "@fontsource/lato": "^4.2.2",
+    "@fontsource/lato": "^4.5.9",
     "minireset.css": "^0.0.7",
-    "sass": "^1.32.8",
-    "vite": "^2.1.5"
+    "sass": "^1.54.5",
+    "vite": "^3.0.9"
   }
 }
